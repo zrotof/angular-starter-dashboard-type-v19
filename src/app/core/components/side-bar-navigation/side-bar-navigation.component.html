@@ -1,0 +1,37 @@
+<ul class="sidebar" [ngClass]="isSideNavToggled() ? 'sidebar-collapsed':'sidebar-not-collapsed'">
+
+  @for (menu of menuList; track menu) {
+    <li class="menu-item">
+      <div class="top"
+        (click)="toggleChildren(menu)"
+        [routerLink]="menu.url"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{exact: true}"
+        >
+        <span>
+          <fa-icon [icon]="(menu.icon)! | convertStringLabelToFontawesomeIcon"></fa-icon>
+          <span> {{menu.label}} </span>
+        </span>
+        @if (menu.items && menu.items.length > 0) {
+          <span class="arrow-icon">
+            <i [class]="menu.items ? 'pi pi-angle-down' : 'pi pi-angle-right'"></i>
+          </span>
+        }
+      </div>
+      <ul class="children"  [class.visible]="menu.expanded">
+        @for (child of menu.items; track child) {
+          <li >
+            <a
+              [routerLink]="child.url"
+              routerLinkActive="active-link"
+              >
+              {{child.label}}
+            </a>
+          </li>
+        }
+      </ul>
+    </li>
+  }
+
+</ul>
+

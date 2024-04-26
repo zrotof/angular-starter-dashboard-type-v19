@@ -1,0 +1,17 @@
+<header>
+    <div class="toggler-logo">
+        <button 
+            class="button-toggle-sidebar" 
+            (click)="onSideBarToggled()" 
+        >
+            <i [ngClass]="isSideNavToggled() ? 'pi pi-arrow-right' : 'pi pi-arrow-left' "></i>
+    </button>
+        <h1 routerLink="/">Company Name</h1>
+    </div>
+     <nav>
+<!--
+        <app-params></app-params>
+-->
+        <app-user-connected-menu-side-bar></app-user-connected-menu-side-bar>
+    </nav>
+</header>
