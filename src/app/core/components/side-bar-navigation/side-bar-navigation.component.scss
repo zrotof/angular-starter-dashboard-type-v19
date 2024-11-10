@@ -1,0 +1,124 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  box-shadow: 0 0.5rem 1rem 0 rgb(44 51 73 / 10%);
+  background-color: var(--project-black-primary-color);
+  color: var(--project-white-primary-color);
+  transition: all 0.2s ease-in;
+  padding-top: 9rem;
+  padding-bottom: 0.5rem;
+  overflow: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  text-wrap: nowrap;
+  width: 20rem;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 0.5rem;
+
+      .dropdown-menu,
+      .menu-item {
+        padding: 0.6rem 1rem;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        color: var(--projec-white-primary-color);
+        text-decoration: none;
+        border: 1px solid transparent;
+        width: 100%;
+
+        &:hover {
+          border: 1px solid var(--project-white-secondary-color) ;
+        }
+
+        fa-icon {
+          font-size: 1.3rem;
+
+          &:first-child {
+            min-width: 40px;
+            text-align: left;
+          }
+
+          &:last-child {
+            margin-left: 10px;
+            font-size: 1rem;
+          }
+        }
+
+        span {
+          font-size: 15px;
+          flex-grow: 1;
+        }
+      }
+
+      .dropdown-menu {
+        text-align: left;
+        background-color: transparent;
+          span {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+          }
+      }
+
+      .sub-menu {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: 300ms ease-in-out;
+
+        div {
+          overflow: hidden;
+
+          .sub-menu-item {
+            padding-left: 2rem;
+            color: var(--project-white-primary-color);
+
+            a {
+              color: #a6a6a6;
+              font-size: 15px;
+            }
+
+            .active-sub-menu {
+              color: var(--project-gold-secondary-color);
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      .show-items {
+        grid-template-rows: 1fr;
+        padding: 1rem 0 0 0;
+      }
+
+      .active-navigation {
+        font-weight: bold;
+        color: var(--project-gold-secondary-color);
+        background-color: rgba(255, 255, 255, 0.083);
+        box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 30px;
+      }
+    }
+  }
+}
+
+.sidebar-collapsed {
+  width: 0;
+  transform: translateX(-100%);
+
+  ul {
+    li {
+      .sub-menu {
+        display: none;
+      }
+    }
+  }
+}

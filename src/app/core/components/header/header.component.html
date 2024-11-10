@@ -1,0 +1,18 @@
+<header>
+    <div class="toggler-logo">
+        <div 
+            class="button-toggle-sidebar" 
+            (click)="onSideBarToggled()"
+        >
+        @if (isSideNavToggled()) {
+            <fa-icon [icon]="'faArrowRight' | convertStringLabelToFontawesomeIcon"></fa-icon>
+        }
+        @else {
+            <fa-icon [icon]="'faArrowLeft' | convertStringLabelToFontawesomeIcon"></fa-icon> 
+        }
+        </div>
+        <h1 routerLink="/">Project Name</h1>
+    </div>
+     <nav>
+    </nav>
+</header>
