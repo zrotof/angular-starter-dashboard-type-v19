@@ -8,18 +8,17 @@ import { Menu } from '../../models/side-bar';
 import { MenuItem } from 'primeng/api';
 
 @Component({
-  selector: 'app-side-bar-navigation',
-  templateUrl: './side-bar-navigation.component.html',
-  styleUrls: ['./side-bar-navigation.component.scss'],
-  standalone: true,
-  encapsulation: ViewEncapsulation.None,
-  imports: [
-    NgClass,
-    RouterLink,
-    ConvertStringLabelToFontawesomeIconPipe,
-    RouterLinkActive,
-    FontAwesomeModule
-  ]
+    selector: 'app-side-bar-navigation',
+    templateUrl: './side-bar-navigation.component.html',
+    styleUrls: ['./side-bar-navigation.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    imports: [
+        NgClass,
+        RouterLink,
+        ConvertStringLabelToFontawesomeIconPipe,
+        RouterLinkActive,
+        FontAwesomeModule
+    ]
 })
 export class SideBarNavigationComponent {
   
@@ -27,10 +26,10 @@ export class SideBarNavigationComponent {
 
   menuList : Menu[] = [
     {
-      icon: 'faUserTie',
-      label: "Menu 1",
+      icon: 'faChartSimple',
+      label: "Tableau De Bord",
       menuItems: [
-        {label:"", url:""}
+        {label:"", url:"tableau-de-bord"}
       ],
       active: false
     },

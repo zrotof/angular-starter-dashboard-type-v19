@@ -1,11 +1,20 @@
 @import "variables.scss";
+@import "primeicons/primeicons.css";
 
-*,
-*::before,
-*::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer reset, primeng;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+@layer primeng {
+
 }
 
 html,
@@ -16,11 +25,22 @@ body {
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: var(--project-green-tertiary-color);
+}
+
+.page-view {
   background-color: var(--project-white-primary-color);
+  min-height: calc(100vh - 7rem);
+  border-radius: 10px 10px 0 0;
+  padding: 2rem;
 }
 
 .my-container {
   max-width: 1400px;
+}
+
+ul{
+  list-style: none;
 }
 
 a {

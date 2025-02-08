@@ -4,8 +4,11 @@ import { provideRouter, withComponentInputBinding, withEnabledBlockingInitialNav
 import { routes } from './app.routes';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient } from '@angular/common/http';
+import { providePrimeNG } from 'primeng/config';
+import Aura from '@primeng/themes/aura';
+
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -13,7 +16,13 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes , withEnabledBlockingInitialNavigation(), withComponentInputBinding()),
     provideHttpClient(),
     importProvidersFrom(FontAwesomeModule),
-    provideAnimations(),
-    provideClientHydration()
+    provideAnimationsAsync(),
+    provideClientHydration(),
+    providePrimeNG({
+      ripple: true,
+      theme: {
+        preset: Aura
+      }
+    })
   ]
 };

@@ -20,6 +20,11 @@
             "outputPath": "dist/angular-starter-dashboard-type-v18",
             "index": "src/index.html",
             "browser": "src/main.ts",
+            "stylePreprocessorOptions": {
+              "sass": {
+                "silenceDeprecations": ["mixed-decls", "color-functions", "global-builtin", "import"]
+              }
+            },
             "polyfills": [
               "zone.js"
             ],
@@ -32,8 +37,6 @@
               }
             ],
             "styles": [
-              "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
-              "node_modules/primeng/resources/primeng.min.css",          
               "src/styles.scss"
             ],
             "scripts": []

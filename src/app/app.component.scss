@@ -1,0 +1,30 @@
+.app{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    app-header{
+        width: 100%;
+    }
+
+    .content{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        overflow: hidden;
+        height: 100vh;
+
+        .side-navigation{
+            position: sticky;
+            top: 0;
+            align-self: start;
+        }
+
+        .wrapper{
+            transition: all 0.2s ease-in;
+            width: 100%;
+            overflow-y: auto;
+            margin-top: 5rem;
+            padding: 2rem 1.5rem 0 2rem;
+        }
+    }
+}

@@ -6,9 +6,9 @@ import {
   faAngleUp,
   faArrowLeft,
   faArrowRight,
+  faChartSimple,
   faCartPlus,
   faUser,
-  faUserGroup,
   faUsers,
   faUserTie,
 } from '@fortawesome/free-solid-svg-icons';
@@ -22,23 +22,25 @@ export class ConvertStringLabelToFontawesomeIconPipe implements PipeTransform {
   transform(value: string): IconProp {
     switch (value) {
       case 'faAngleDown':
-        return faAngleDown
+        return faAngleDown as IconProp;
       case 'faAngleUp':
-        return faAngleUp
+        return faAngleUp as IconProp;
       case 'faArrowLeft':
-        return faArrowLeft
+        return faArrowLeft as IconProp;
       case 'faArrowRight':
-        return faArrowRight
+        return faArrowRight as IconProp;
       case 'faCartPlus':
-        return faCartPlus
+        return faCartPlus as IconProp;
+      case 'faChartSimple':
+        return faChartSimple as IconProp;
       case 'faUser':
-        return faUser
+        return faUser as IconProp;
       case 'faUsers':
-        return faUsers
+        return faUsers as IconProp;
       case 'faUserTie':
-        return faUserTie
+        return faUserTie as IconProp;
       default:
-        return faUser;
+        return faUser as IconProp;
     }
   }
 

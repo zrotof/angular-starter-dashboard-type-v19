@@ -6,15 +6,14 @@ import { AuthService } from './core/services/auth/auth.service';
 import { SideBarStateService } from './core/services/side-bar-state/side-bar-state.service';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
-  imports: [
-    RouterOutlet,
-    HeaderComponent,
-    SideBarNavigationComponent
-  ]
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [
+        RouterOutlet,
+        HeaderComponent,
+        SideBarNavigationComponent
+    ]
 })
 export class AppComponent {
   isUserLogged = computed(()=> { 

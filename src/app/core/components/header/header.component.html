@@ -11,8 +11,13 @@
             <fa-icon [icon]="'faArrowLeft' | convertStringLabelToFontawesomeIcon"></fa-icon> 
         }
         </div>
-        <h1 routerLink="/">Project Name</h1>
+        <h1 routerLink="/tableau-de-bord">Project Name</h1>
     </div>
-     <nav>
-    </nav>
+    <nav>
+        <ul>
+          <li>
+            <app-user-connected-menu-side-bar></app-user-connected-menu-side-bar>
+          </li>
+        </ul>
+      </nav>
 </header>

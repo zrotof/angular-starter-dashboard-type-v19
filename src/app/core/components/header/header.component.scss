@@ -20,17 +20,17 @@ header{
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            background-color: white;
+            background-color: var(--project-white-primary-color);
             width: 30px;
             height: 30px;
             cursor: pointer;
-            color: #0a1c36;
+            color: var(--project-black-primary-color);
             transition: all 0.2s ease-in-out;
-            border: 2px solid black;
+            border: 2px solid var(--project-black-primary-color);
                         
             &:hover{
-                background-color: black;
-                color: white;
+                background-color: var(--project-black-primary-color);
+                color: var(--project-white-primary-color);
             }
             
             i{
@@ -44,11 +44,39 @@ header{
             cursor: pointer;
             margin-left: 10px;
             font-size: 1.6rem;
+            color: var(--project-black-primary-color);
         }
     }
 
     nav{
         display: flex;
         gap: 1rem;
+        color: var(--project-black-primary-color);
+        
+        ul{
+            display: flex;
+            gap: 0.5rem;
+
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 40px;
+                height: 40px;
+                cursor: pointer;
+                border-radius: 50%;
+                transition: all 0.2s ease-in-out;
+                color: var(--project-black-primary-color);
+        
+                &:hover{
+                    background-color: var(--project-white-secondary-color);
+                    color: var(--project-black-primary-color);
+                }
+        
+                fa-icon{
+                    font-size: 1.4rem;
+                }
+            }
+        }
     }
 }
