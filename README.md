@@ -1,4 +1,4 @@
-# angular-starter-Dashboard-type-v18
+# angular-starter-Dashboard-type-v19
 The aim of this project is to provide a set of tools and configurations to facilitate the initialisation of an Angular standalone admin type project with a simple base architecture 
 
 # What is included
