@@ -21,8 +21,7 @@ export class HeaderComponent {
 
   private readonly sidebarStateService = inject(SideBarStateService)
   
-  protected isSideNavToggled = computed(()=>  this.sidebarStateService.isSideNavToggled());
-
+  protected isSideNavToggled = computed(()=> this.sidebarStateService.isSideNavToggled());
 
   onSideBarToggled(){
     this.sidebarStateService.setSideBarState(!this.isSideNavToggled())

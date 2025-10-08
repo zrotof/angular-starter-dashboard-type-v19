@@ -1,4 +1,4 @@
-import { Component, computed, HostListener } from '@angular/core';
+import { Component, computed, HostListener, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/components/header/header.component';
 import { SideBarNavigationComponent } from './core/components/side-bar-navigation/side-bar-navigation.component';
@@ -16,16 +16,14 @@ import { SideBarStateService } from './core/services/side-bar-state/side-bar-sta
     ]
 })
 export class AppComponent {
+  private authService = inject(AuthService);
+  private sidebarStateService = inject(SideBarStateService);
+
   isUserLogged = computed(()=> { 
     return this.authService.isUserLogged()
   } );
 
   isSideNavToggled = computed(() =>  this.sidebarStateService.isSideNavToggled());
-
-  constructor(
-    private authService : AuthService,
-    private sidebarStateService : SideBarStateService,
-  ){}
 
   ngOnInit(): void {
     this.onResize();

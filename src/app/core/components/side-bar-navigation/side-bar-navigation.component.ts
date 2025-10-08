@@ -1,11 +1,9 @@
-import { NgClass } from '@angular/common';
-import { Component, computed, ViewEncapsulation } from '@angular/core';
+import { Component, computed, inject, ViewEncapsulation } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SideBarStateService } from '../../services/side-bar-state/side-bar-state.service';
 import { ConvertStringLabelToFontawesomeIconPipe } from '../../pipes/convertStringLabelToFontawesomeIcon/convert-string-label-to-fontawesome-icon.pipe';
 import { Menu } from '../../models/side-bar';
-import { MenuItem } from 'primeng/api';
 
 @Component({
     selector: 'app-side-bar-navigation',
@@ -13,15 +11,16 @@ import { MenuItem } from 'primeng/api';
     styleUrls: ['./side-bar-navigation.component.scss'],
     encapsulation: ViewEncapsulation.None,
     imports: [
-        NgClass,
         RouterLink,
         ConvertStringLabelToFontawesomeIconPipe,
         RouterLinkActive,
         FontAwesomeModule
     ]
 })
+
 export class SideBarNavigationComponent {
-  
+  private readonly sidebarStateService = inject(SideBarStateService);
+
   isSideNavToggled = computed(() => this.sidebarStateService.isSideNavToggled());
 
   menuList : Menu[] = [
@@ -53,18 +52,8 @@ export class SideBarNavigationComponent {
       active: false
     },
     {
-      icon: 'faHouse',
-      label: "Menu 4",
-          menuItems: [
-        {label: "Utilisateurs", url: "/utilisateurs"},
-        {label: "Roles", url: "g"}
-      ],
-      active: false,
-    },
-
-    {
       icon: 'faCartPlus',
-      label: "Menu 5",
+      label: "Menu 4",
           menuItems: [
             {label: "sous-menu-1", url:"a"},
             {label: "sous-menu-2", url:"b"}
@@ -73,8 +62,6 @@ export class SideBarNavigationComponent {
     },
   ];
 
-
-  constructor(private sidebarStateService : SideBarStateService) {}
 
   onSideBarToggled(){
     this.sidebarStateService.setSideBarState(!this.isSideNavToggled())
